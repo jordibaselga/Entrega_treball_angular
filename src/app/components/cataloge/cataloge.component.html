@@ -1,0 +1,12 @@
+<h1>Catalogue</h1>
+<label for="searchProduct">Search:</label><input type="text" name="searchProduct" id="searchProduct" [(ngModel)]="searchProduct">
+<br><br><hr>
+<div class="container-fluid">
+  <div class="row"><br><br>
+    <app-product-item
+    [p]="product"
+    *ngFor="let product of products | productFilter:searchProduct"
+    (rattingChanged)="changeRatting($event, product)" class="col-md-4">
+    </app-product-item>
+  </div>
+</div>
